@@ -4,15 +4,39 @@
 
 console.log(dayjs(), "Dayjs")
 
-// Figure out time/date plug in
 
 // Global var
-  //var whatPlans
-  //   
+  //var whatPlans (update txt box)
+  //var currentDay
+  //var currentTime
+  //var hour
+  //var past
+  //var present
+  //var future  
+
+ //var workHours= [9am, 10am, 11am, 12pm, 1pm, 2pm, 3pm, 4pm, 5pm]   
+
+
+//  
+
 
 // Functions
 
+//  function checkTime()
+   // Run every time the page loads/refreshes (contains if/else staments about past, present, future)
+
+ // if (workHours > workHours.length - 1) {
+//     newDay();
+//     return;
+
+
+
 // function saveHour()
+
+// function newDay()
+   //reset all time blocks to future (color)
+   //empty all txt blocks
+   //empty local storage?    
 
 
 // How will it work?
