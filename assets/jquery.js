@@ -1,23 +1,18 @@
-// jquery
-
-
 
 console.log(dayjs(), "Dayjs")
 
 
-// Global var
-  //var whatPlans (update txt box)
-  //var currentDay
-  //var currentTime
-  //var hour
-  //var past
-  //var present
-  //var future  
+  // var whatPlans (update txt box)
+  var currentDay=[]
+  var currentTime=[]
+  var past=[]
+  var present=[]
+  var future=[] 
 
- //var workHours= [9am, 10am, 11am, 12pm, 1pm, 2pm, 3pm, 4pm, 5pm]   
+ var workHours= ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]   
 
 
-//  
+ 
 
 
 // Functions
