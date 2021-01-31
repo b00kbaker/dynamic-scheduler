@@ -1,17 +1,16 @@
 
-console.log(dayjs(), "Dayjs")
 
 
-  // var whatPlans (update txt box)
-  var currentDay=[]
-  var currentTime=[]
-  var past=[]
-  var present=[]
-  var future=[] 
+  var whatPlans=[]
+  var currentDay=dayjs().date()
+  var currentTime=dayjs()
+  var pastHour=[]
+  var presentHour=dayjs().hour()
+  var futureHour=[] 
+  var workHours= ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]   
 
- var workHours= ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]   
-
-
+console.log(presentHour)
+console.log(currentDay)
  
 
 
@@ -39,7 +38,7 @@ console.log(dayjs(), "Dayjs")
 
  //Time is only 9am-5pm   (diff)
 
- //Future time in 1 color
+ //Future time in 1 color --All colors are already plugged into CSS
  //Past is 2 color
  //Present is 3 color
  
