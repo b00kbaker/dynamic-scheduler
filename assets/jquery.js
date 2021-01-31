@@ -22,13 +22,15 @@ var workHours = [
 $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 
 for (i = 0; i < workHours.length; i++) {
-  $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(".row");
+  var row= $(`<div class="row"</div>`).appendTo(".container");
+
+  $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
   $(`<textarea class="col-8 note-input" id="input-${i}"></textarea>`)
     .attr("placeholder", "Enter note here")
-    .appendTo(".row");
+    .appendTo(row);
   $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`)
     .text("Save")
-    .appendTo(".row");
+    .appendTo(row);
 };
 
 
