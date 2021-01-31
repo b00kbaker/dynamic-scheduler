@@ -2,17 +2,17 @@
 
 
   var whatPlans=[]
-  var currentDay=dayjs().date()
+  var currentDate=dayjs().date()
   var currentTime=dayjs()
   var pastHour=[]
   var presentHour=dayjs().hour()
   var futureHour=[] 
   var workHours= ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"]   
 
-console.log(presentHour)
-console.log(currentDay)
- 
 
+$("#currentDay").text(currentTime.format('DD/MM/YYYY h:mm a'));
+
+// console.log()
 
 // Functions
 
