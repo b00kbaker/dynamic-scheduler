@@ -23,24 +23,30 @@ $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 
 for (i = 0; i < workHours.length; i++) {
   var row= $(`<div class="row"</div>`).appendTo(".container");
+  let timeClass=""
+  if(workHours[i] === presentHour){
+    timeClass="col-8 note-input present"
+  }
+  else if (workHours[i] < presentHour) {
+    timeClass="col-8 note-input future"
+  } 
+  else (workHours[i] > presentHour)
+    timeClass="col-8 note-input past"
+
 
   $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
-  $(`<textarea class="col-8 note-input" id="input-${i}"></textarea>`)
+  $(`<textarea class="${timeClass} id="input-${i}"></textarea>`)
     .attr("placeholder", "Enter note here")
     .appendTo(row);
   $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`)
     .text("Save")
     .appendTo(row);
 
+    console.log(presentHour)
 };
 
 
-function checkTime(){
-  for (i = 0; i < workHours.length; i++) {
-  if (workHours[i] === presentHour){
 
-
-   presentHour.input-${i}.addClass("present")
   // (#input-0 is 9am through #input-8 is 5pm)
     
   // else(workHours[i] < presentHour){
@@ -50,8 +56,7 @@ function checkTime(){
   //   .addClass("future")
   // }
 
-  }
-  };
+
 
 
 
