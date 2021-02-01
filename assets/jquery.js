@@ -48,8 +48,8 @@ for (i = 0; i < workHours.length; i++) {
 document.querySelector(".saveBtn").addEventListener("click", function (event) {
   event.preventDefault();
   console.log(event.target.id);
-  console.log($`textarea#${"#hour${i}"}`);
-  console.log($(`textarea#${event.target.id}`).val());
+  // console.log($`textarea#${"#hour${i}"}`);
+  // console.log($(`textarea#${event.target.id}`).val());
   localStorage.setItem(event.target.id, $(`textarea#${event.target.id}`).val());
 });
 
@@ -58,8 +58,18 @@ document.querySelector(".saveBtn").addEventListener("click", function (event) {
 
 
 // function newDay()
-//reset all time blocks to future (color)
-//empty all txt blocks
-//empty local storage?
+if (currentTime = "12am"){
+}
 
-// newDay();
+//reset all time blocks to future (color)
+workHours.timeClass = "col-8 note-input future";
+
+//empty all txt blocks
+all <textarea> to .placeholder
+
+//empty local storage?
+localStorage.clear();
+
+
+
+// newDay(); Check this function every time the page is loaded
