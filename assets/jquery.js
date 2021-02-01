@@ -1,10 +1,7 @@
 // Global variables
-var whatPlans;
 var currentDate = dayjs().date();
 var currentTime = dayjs();
-var pastHour = [];
 var presentHour = dayjs().format("ha");
-var futureHour = [];
 var workHours = [
   "9am",
   "10am",
@@ -40,7 +37,7 @@ for (i = 0; i < workHours.length; i++) {
 
 
   $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
-  $(`<textarea class="${timeClass} id="input-${i}"></textarea>`)
+  $(`<textarea class="${timeClass}" id="hour${i}"></textarea>`)
     .attr("placeholder", "Enter note here")
     .appendTo(row);
   $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`)
@@ -52,7 +49,11 @@ for (i = 0; i < workHours.length; i++) {
 
 document.querySelector(".saveBtn").addEventListener("click", function(event) {
   event.preventDefault();
-  localStorage.setItem(input-$({i})).JSON.stringify(input-$({i}))
+  console.log(event.target.id)
+  console.log($(`textarea#${event.target.id}`).val())
+  localStorage.setItem(event.target.id,$(`textarea#${event.target.id}`).val())
+  localStorage.setItem(event.target.id,$(`textarea#${event.target.id}`).val())
+
 });
 
 
