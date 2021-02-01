@@ -1,4 +1,3 @@
-// Global variables
 var whatPlans;
 var currentDate = dayjs().date();
 var currentTime = dayjs();
@@ -49,15 +48,12 @@ for (i = 0; i < workHours.length; i++) {
 document.querySelector(".saveBtn").addEventListener("click", function (event) {
   event.preventDefault();
   console.log(event.target.id);
-  console.log($(`textarea#${"#hour${i}"}`).val());
+  console.log($`textarea#${"#hour${i}"}`);
   console.log($(`textarea#${event.target.id}`).val());
   localStorage.setItem(event.target.id, $(`textarea#${event.target.id}`).val());
 });
 
-// Functions
 
-//     newDay();
-//     return;
 
 
 
@@ -65,3 +61,5 @@ document.querySelector(".saveBtn").addEventListener("click", function (event) {
 //reset all time blocks to future (color)
 //empty all txt blocks
 //empty local storage?
+
+// newDay();
