@@ -21,30 +21,31 @@ var workHours = [
 
 $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 
+for (i = 0; i < workHours.length; i++) {
+  var row= $(`<div class="row"</div>`).appendTo(".container");
 
-function createColumns(){
- for (i = 0; i < workHours.length; i++) {
- var row= $(`<div class="row"</div>`).appendTo(".container");
+  $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
+  $(`<textarea class="col-8 note-input" id="input-${i}"></textarea>`)
+    .attr("placeholder", "Enter note here")
+    .appendTo(row);
+  $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`)
+    .text("Save")
+    .appendTo(row);
 
- $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
- $(`<textarea class="col-8 note-input" id="input-${i}"></textarea>`).attr("placeholder", "Enter note here").appendTo(row);
- $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`).text("Save").appendTo(row);
- }
 };
 
+
 function checkTime(){
-  if (presentHour search against each time in workHours array
-    presentHour === 9am .addClass("present")
-    presentHour < 9am .addClass("future")
-    presentHour > 9am .addClas("past")
+  for (i = 0; i < workHours.length; i++) {
+  if (workHours[i] === presentHour){
+   presentHour.input-${i}.addClass("present")
+
+
+    (#input-0 is 9am through #input-8 is 5pm)
     
-    ) {
 
-  
- 
   }
-}
-
+  };
 
 
 
@@ -57,32 +58,12 @@ function checkTime(){
   // }
   
 
-  
-
-
-
-// function checkTime (){
-//   if(currentTime.format("ha") === presentHour){
-//     .addClass('present')} 
-//   }
-// ;
-
-
-
-//     else (pastHour < currentTime.format("ha"))
-//       $(this).find('textarea').addClass('past')}
-//       else(futureHour > currentTime.format("ha"))
-//     }
    
-// }
-//   };
-// };   
 
 
 
 
 
-console.log (currentTime.format("ha"))
 
 
 // Functions
