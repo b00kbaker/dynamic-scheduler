@@ -38,11 +38,17 @@ for (i = 0; i < workHours.length; i++) {
 function checkTime(){
   for (i = 0; i < workHours.length; i++) {
   if (workHours[i] === presentHour){
+
+
    presentHour.input-${i}.addClass("present")
-
-
-    (#input-0 is 9am through #input-8 is 5pm)
+  // (#input-0 is 9am through #input-8 is 5pm)
     
+  // else(workHours[i] < presentHour){
+  //   .addClass("past")
+  // } 
+  // else if (workHours[i] > presentHour){
+  //   .addClass("future")
+  // }
 
   }
   };
