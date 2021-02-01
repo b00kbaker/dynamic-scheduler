@@ -10,7 +10,7 @@ var workHours = [
   "10am",
   "11am",
   "12pm",
-  "1pm",
+  "1pm", 
   "2pm",
   "3pm",
   "4pm",
@@ -21,17 +21,29 @@ var workHours = [
 
 $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 
-for (i = 0; i < workHours.length; i++) {
-  var row= $(`<div class="row"</div>`).appendTo(".container");
 
-  $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
-  $(`<textarea class="col-8 note-input" id="input-${i}"></textarea>`)
-    .attr("placeholder", "Enter note here")
-    .appendTo(row);
-  $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`)
-    .text("Save")
-    .appendTo(row);
+function createColumns(){
+ for (i = 0; i < workHours.length; i++) {
+ var row= $(`<div class="row"</div>`).appendTo(".container");
+
+ $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
+ $(`<textarea class="col-8 note-input" id="input-${i}"></textarea>`).attr("placeholder", "Enter note here").appendTo(row);
+ $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`).text("Save").appendTo(row);
+ }
 };
+
+function checkTime(){
+  if (presentHour search against each time in workHours array
+    presentHour === 9am .addClass("present")
+    presentHour < 9am .addClass("future")
+    presentHour > 9am .addClas("past")
+    
+    ) {
+
+  
+ 
+  }
+}
 
 
 
