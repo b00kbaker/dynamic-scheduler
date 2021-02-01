@@ -15,6 +15,7 @@ var workHours = [
   "5pm",
 ];
 
+
 // if (localStorage.getItem("localHourlyTasks")) {
 //   whatPlans= JSON.parse(localStorage.getItem("localHourlyTasks"));
 // } else {
@@ -26,12 +27,12 @@ $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 for (i = 0; i < workHours.length; i++) {
   var row = $(`<div class="row"</div>`).appendTo(".container");
   let timeClass = "";
-  if (workHours[i] === presentHour) {
-    timeClass = "col-8 note-input present";
-  } else if (workHours[i] < presentHour) {
+  if (workHours[i] < presentHour) 
+    timeClass = "col-8 note-input past";
+  else if (workHours[i] > presentHour) 
     timeClass = "col-8 note-input future";
-  } else workHours[i] > presentHour;
-  timeClass = "col-8 note-input past";
+  else if (workHours[i] = presentHour) 
+    timeClass = "col-8 note-input present";
 
   $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
   $(`<textarea class="${timeClass}" id="hour${i}"></textarea>`)
@@ -42,13 +43,13 @@ for (i = 0; i < workHours.length; i++) {
     .appendTo(row);
 
   console.log(presentHour);
-}
+  console.log(workHours[i]);
+};
 
 document.querySelector(".saveBtn").addEventListener("click", function (event) {
   event.preventDefault();
   console.log(event.target.id);
-  console.log(event.target.id[4]);
-  console.log(event.target.id);
+  console.log($(`textarea#${"#hour${i}"}`).val());
   console.log($(`textarea#${event.target.id}`).val());
   localStorage.setItem(event.target.id, $(`textarea#${event.target.id}`).val());
 });
@@ -58,7 +59,7 @@ document.querySelector(".saveBtn").addEventListener("click", function (event) {
 //     newDay();
 //     return;
 
-// function saveTask()
+
 
 // function newDay()
 //reset all time blocks to future (color)
