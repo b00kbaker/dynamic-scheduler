@@ -1,5 +1,5 @@
 // Global variables
-var whatPlans = [];
+var whatPlans;
 var currentDate = dayjs().date();
 var currentTime = dayjs();
 var pastHour = [];
@@ -17,6 +17,11 @@ var workHours = [
   "5pm",
 ];
 
+if (localStorage.getItem("localHourlyTasks")) {
+  whatPlans= JSON.parse(localStorage.getItem("localHourlyTasks"));
+} else {
+  whatPlans = [];
+};
 
 
 $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
@@ -45,48 +50,21 @@ for (i = 0; i < workHours.length; i++) {
     console.log(presentHour)
 };
 
-
-
-  // (#input-0 is 9am through #input-8 is 5pm)
-    
-  // else(workHours[i] < presentHour){
-  //   .addClass("past")
-  // } 
-  // else if (workHours[i] > presentHour){
-  //   .addClass("future")
-  // }
-
-
-
-
-
-
-  // } else if (Number(dateHour) < dayjs().hour()) {
-  //   $(this).find('textarea').addClass('past').attr('disabled', 'disabled');
-  //   $(this).find('.save-button').addClass('disabled').attr('disabled', true);
-  // } else {
-  //   $(this).find('textarea').addClass('future');
-  // }
-  
-
-   
-
-
-
-
-
+document.querySelector(".saveBtn").addEventListener("click", function(event) {
+  event.preventDefault();
+  localStorage.setItem(input-$({i})).JSON.stringify(input-$({i}))
+});
 
 
 // Functions
 
-//  function checkTime()
-// Run every time the page loads/refreshes (contains if/else staments about past, present, future)
+
 
 // if (workHours > workHours.length - 1) {
 //     newDay();
 //     return;
 
-// function saveHour()
+// function saveTask()
 
 // function newDay()
 //reset all time blocks to future (color)
