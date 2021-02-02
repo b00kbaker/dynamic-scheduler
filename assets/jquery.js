@@ -15,11 +15,7 @@ var workHours = [
   "5pm",
 ];
 
-// if (localStorage.getItem("localHourlyTasks")) {
-//   whatPlans= JSON.parse(localStorage.getItem("localHourlyTasks"));
-// } else {
-//   whatPlans = [];
-// };
+
 
 $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 
@@ -57,25 +53,17 @@ $(".saveBtn").on("click", function (event) {
   console.log($(this).siblings("textarea").val());
   text = $(this).siblings("textarea").val();
   var timeSchedule = $(this).siblings("div").text();
-  // console.log($`textarea#${"#hour${i}"}`);
-  // console.log($(`textarea#${event.target.id}`).val());
   localStorage.setItem(timeSchedule, text);
 });
 
-// var saveText= localStorage.getItem(text);
-// txt.val(saveText)
-//Do I have to have an array to push info to? Still issue with defining/selecting all time blocks (aka key). Each time block has an id of "hour0"-"hour8", should I just make an if statement for each one?  or  use var hourBlocks=["hour0", "hour1"]?
 
-// function newDay()
-///////////////////////}
 
-//reset all time blocks to future (color)
-// workHours.timeClass = "col-8 note-input future";
+function newDay(){
+if(presentHour == "12am"){
+txt = "col-8 not-input future"
+localStorage.clear();
+}; 
 
-//empty all txt blocks////////////////////
-// all <textarea> to .placeholder
+console.log(presentHour);
 
-//empty local storage?
-// localStorage.clear();
-
-// newDay(); Check this function every time the page is loaded
+newDay()};
