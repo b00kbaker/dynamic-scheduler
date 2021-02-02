@@ -4,7 +4,7 @@ var currentDate = dayjs().date();
 var currentTime = dayjs();
 var presentHour = dayjs().format("ha");
 var workHours = [
-  "9am",
+  "09am",
   "10am",
   "11am",
   "12pm",
@@ -26,21 +26,27 @@ $("#currentDay").text(currentTime.format("DD/MM/YYYY h:mm a"));
 for (let i = 0; i < workHours.length; i++) {
   var row = $(`<div class="row"</div>`).appendTo(".container");
   let timeClass = "";
-  if (workHours[i] < presentHour) timeClass = "col-8 note-input past";
-  else if (workHours[i] > presentHour) timeClass = "col-8 note-input future";
-  else if (workHours[i] == presentHour) timeClass = "col-8 note-input present";
+  
+  console.log(workHours[i], presentHour)
+  if (workHours[i] < presentHour) {
+    timeClass = "col-8 note-input past";
+  } else if (workHours[i] > presentHour) {
+    timeClass = "col-8 note-input future";
+  } else if (workHours[i] == presentHour) {
+    timeClass = "col-8 note-input present";
+  }
 
   $(`<div class="col-2 time-block"></div>`).text(workHours[i]).appendTo(row);
- var txt= $(`<textarea class="${timeClass}" id="hour${i}"></textarea>`)
+  var txt = $(`<textarea class="${timeClass}" id="hour${i}"></textarea>`)
     .attr("placeholder", "Enter note here")
-    
+
     .appendTo(row);
   $(`<button class="col-2 btn btn-secondary saveBtn" id="hour${i}"></button>`)
     .text("Save")
     .appendTo(row);
 
-  var saveText= localStorage.getItem(workHours[i]);
-txt.val(saveText)
+  var saveText = localStorage.getItem(workHours[i]);
+  txt.val(saveText);
   console.log(presentHour);
   console.log(workHours[i]);
 }
@@ -54,7 +60,6 @@ $(".saveBtn").on("click", function (event) {
   // console.log($`textarea#${"#hour${i}"}`);
   // console.log($(`textarea#${event.target.id}`).val());
   localStorage.setItem(timeSchedule, text);
-  
 });
 
 // var saveText= localStorage.getItem(text);
